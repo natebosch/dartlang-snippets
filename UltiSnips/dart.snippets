@@ -49,3 +49,29 @@ snippet im "Import" b
 import 'package:${1}';
 ${0}
 endsnippet
+
+snippet set "Field setter" b
+void set $1($2 $1) {
+	${0:_$1 = $1;}
+}
+endsnippet
+
+snippet get "Simple field getter" b
+$1 get $2 => ${3:_$2};
+endsnippet
+
+snippet gett "Field getter with more logic" b
+$1 get $2 {
+	$0
+}
+endsnippet
+
+snippet geta "Async field getter" b
+Future<$1> get $2 async => ${3:_$2};
+endsnippet
+
+snippet getta "Async field getter with more logic" b
+Future<$1> get $2 async {
+	$0
+}
+endsnippet
