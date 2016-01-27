@@ -28,6 +28,18 @@ snippet am "Anonymous Method" w
 }
 endsnippet
 
+snippet ar "Anonymous single statement method" w
+($1) => $0
+endsnippet
+
+snippet aar "Async anonymous single statement method" w
+($1) async => $0
+endsnippet
+
+snippet ident "Anonymous identiy method" w
+(${1:_}) => $1
+endsnippet
+
 snippet aam "Anonymous Async Method" w
 (${1}) async {
 	${0}
