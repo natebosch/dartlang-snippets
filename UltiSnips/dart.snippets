@@ -1,30 +1,54 @@
-snippet test "Unittest test case"
-test('${1}', () async {
-	${0}
+snippet test "Unittest test case" b
+test('$1', () async {
+	$0
 });
 endsnippet
 
-snippet group "Unittest test group"
-group('${1}', () {
-	${0}
+snippet group "Unittest test group" b
+group('$1', () {
+	${2:setUp(() async {
+		$3
+	});
+	}${4:tearDown(() async {
+		$5
+	});
+	}$0
 });
 endsnippet
 
-snippet sync "Sync method"
-${1:void} ${2}(${3}) {
-	${0}
+snippet setup "Unit test setup method" b
+setUp(() async {
+	$0
+});
+endsnippet
+
+snippet teardown "Unit test teardown method" b
+tearDown(() async {
+	$0
+});
+endsnippet
+
+snippet main "Dart main method" b
+void main() {
+	$0
 }
 endsnippet
 
-snippet async "Async method"
-Future<${1:Null}> ${2}(${3}) async {
-	${0}
+snippet sync "Sync method" b
+${1:void} $2($3) {
+	$0
+}
+endsnippet
+
+snippet async "Async method" b
+Future<${1:Null}> $2($3) async {
+	$0
 }
 endsnippet
 
 snippet am "Anonymous Method" w
-(${1}) {
-	${0}
+($1) {
+	$0
 }
 endsnippet
 
@@ -41,29 +65,27 @@ snippet ident "Anonymous identiy method" w
 endsnippet
 
 snippet aam "Anonymous Async Method" w
-(${1}) async {
-	${0}
+($1) async {
+	$0
 }
 endsnippet
 
-snippet class
-class ${1} {
-	${0}
+snippet class "Class outline" b
+class $1 {
+	$0
 }
 endsnippet
 
 snippet di "Dart import" b
 import 'dart:${1:async}';
-${0}
 endsnippet
 
 snippet im "Import" b
-import 'package:${1}';
-${0}
+import 'package:$1';
 endsnippet
 
 snippet set "Field setter" b
-void set $1($2 $1) {
+set $1($2 $1) {
 	${0:_$1 = $1;}
 }
 endsnippet
