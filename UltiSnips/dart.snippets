@@ -1,9 +1,20 @@
+global !p
+def ensure_import(path):
+	if ":" not in path:
+		path = "package:%s.dart" % path
+	full_line = "import '%s';" % path
+	if full_line not in snip.buffer:
+		snip.buffer.append(full_line, 0)
+endglobal
+
+pre_expand "ensure_import('test/test')"
 snippet test "Unittest test case" b
 test('$1', () async {
 	$0
 });
 endsnippet
 
+pre_expand "ensure_import('test/test')"
 snippet group "Unittest test group" b
 group('$1', () {
 	${2:setUp(() async {
@@ -40,6 +51,7 @@ ${1:void} $2($3) {
 }
 endsnippet
 
+pre_expand "ensure_import('dart:async')"
 snippet async "Async method" b
 Future<${1:Null}> $2($3) async {
 	$0
@@ -100,10 +112,12 @@ $1 get $2 {
 }
 endsnippet
 
+pre_expand "ensure_import('dart:async')"
 snippet geta "Async field getter" b
 Future<$1> get $2 async => ${3:_$2};
 endsnippet
 
+pre_expand "ensure_import('dart:async')"
 snippet getta "Async field getter with more logic" b
 Future<$1> get $2 async {
 	$0
