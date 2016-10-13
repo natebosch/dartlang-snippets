@@ -9,7 +9,7 @@ endglobal
 
 pre_expand "ensure_import('test/test')"
 snippet test "Unittest test case" b
-test('$1', () async {
+test('$1', () ${2:async }{
 	$0
 });
 endsnippet
