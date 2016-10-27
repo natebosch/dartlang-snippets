@@ -1,0 +1,27 @@
+snippet glyph "Glyph component using google material icons" w
+<glyph icon="$1"></glyph>
+endsnippet
+
+snippet material_icons "HTML link for material icon font" w
+<link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons">
+endsnippet
+
+snippet radios "Material Radio Group with a repeated radio button" w
+<material-radio-group>
+	<material-radio-button *ngFor="let $1 of ${2:$1s}"
+	    [checked]="${3:$1 == ${4:${1/.*/selected\u$0/}}}"
+	    (checkedChanged)="${5:$4 = $event ? $1 : $4}">
+	</material-radio-button>
+</material-radio-group>
+endsnippet
+
+snippet checkbox "Material checkbox" w
+<material-checkbox label="$1" [(checked)]="$2">
+</material-checkbox>
+endsnippet
+
+snippet toggle "Material toggle" w
+<material-toggle label="$1" [(checked)]="$2">
+</material-toggle>
+endsnippet

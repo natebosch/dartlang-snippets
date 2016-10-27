@@ -1,0 +1,57 @@
+global !p
+from dartlang_snippets import ensure_import
+endglobal
+
+pre_expand "ensure_import('angular2/angular2', snip)"
+snippet co "Angular Component class" bm
+@Component(
+		selector: '${1:`!p snip.rv = snip.basename.replace('_','-')`}',
+		templateUrl: '${2:${1/-/_/g}}.html',
+		${3:styleUrls: const ['${4:${1/-/_/g}}${5:.scss}.css'],
+		}directives: const[$6])
+class ${1/(-|^)(\w)/\u$2/g} {
+	$0
+}
+endsnippet
+
+snippet providers "Angular @Component providers list" b
+providers: const [
+	$0
+],
+endsnippet
+
+pre_expand "ensure_import('dart:async', snip)"
+snippet output "Output annotation and field" b
+@Output()
+Stream<${2:Null}> get ${1} => $4.stream;
+${3:final ${4:_$1Ctl} = new StreamController<$2>();}
+endsnippet
+
+snippet input "Input annotation" b
+@Input()
+$0
+endsnippet
+
+snippet style "@Component styleUrls" b
+styleUrls: const ['${1:`!p
+line_number = snip.snippet_start[0]
+previous_lines = snip.buffer[line_number- 10:line_number]
+previous_lines.reverse()
+selector_line = next((l for l in previous_lines if 'selector:' in l), '')
+match = re.match("\s*selector: '([\w-]+)',", selector_line)
+if match:
+  selector = match.group(1)
+  snip.rv = selector.replace('-','_')
+`}${2:.scss}.css'],
+endsnippet
+
+pre_expand "ensure_import('angular2/router', snip)"
+snippet routes "Angular @RouteConfig annotation" b
+@RouteConfig(const[
+	$0
+])
+endsnippet
+
+snippet route "Angular Route declaration" b
+const Route(name: '$1', path: '${2:/}', component: ${3:$1}),
+endsnippet
