@@ -56,6 +56,11 @@ $1 get $2 {
 }
 endsnippet
 
+snippet getl "Field with lazy initialization" b
+$1 _$2;
+${1} get ${2} => _$2 ?? ${3:_init${2/.*/\u$0/}()};
+endsnippet
+
 pre_expand "ensure_import('dart:async', snip)"
 snippet geta "Async field getter" b
 Future<$1> get $2 async => ${3:_$2};
