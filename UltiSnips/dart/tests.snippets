@@ -12,13 +12,7 @@ endsnippet
 pre_expand "ensure_import('test/test', snip)"
 snippet group "Unittest test group" b
 group('$1', () {
-	${2:setUp(() async {
-		$3
-	});
-	}${4:tearDown(() async {
-		$5
-	});
-	}$0
+	$0
 });
 endsnippet
 
