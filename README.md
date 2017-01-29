@@ -89,3 +89,5 @@ Install this repository and UltiSnips using your favorite method. If you used
 Plug 'SirVer/Ultisnips'
 Plug 'natebosch/dartlang-snippets'
 ```
+
+[vim-plug]: https://github.com/junegunn/vim-plug
