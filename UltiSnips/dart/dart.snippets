@@ -86,6 +86,12 @@ Future<$1> get $2 async {
 }
 endsnippet
 
+pre_expand "ensure_import('dart:async', snip)"
+snippet gets "Stream field with a controller" b
+Stream<${2:Null}> get ${1} => ${3:$4.stream;
+final ${4:_$1} = new StreamController<$2>();}
+endsnippet
+
 snippet m "Anonymous method" w
 ($1) {
 	$0
