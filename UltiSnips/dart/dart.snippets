@@ -8,7 +8,7 @@ void main() {
 }
 endsnippet
 
-snippet ident "Anonymous identiy method" w
+snippet ident "Anonymous identity method" w
 (${1:_}) => $1
 endsnippet
 
@@ -75,12 +75,12 @@ ${1} get ${2} => _$2 ?? ${3:_init${2/.*/\u$0/}()};
 endsnippet
 
 pre_expand "ensure_import('dart:async', snip)"
-snippet geta "Async field getter" b
+snippet aget "Async field getter" b
 Future<$1> get $2 async => ${3:_$2};
 endsnippet
 
 pre_expand "ensure_import('dart:async', snip)"
-snippet getta "Async field getter with more logic" b
+snippet agett "Async field getter with more logic" b
 Future<$1> get $2 async {
 	$3
 }

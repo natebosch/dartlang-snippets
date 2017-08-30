@@ -3,26 +3,26 @@ from dartlang_snippets import ensure_import
 endglobal
 
 pre_expand "ensure_import('test/test', snip)"
-snippet test "Unittest test case" b
+snippet test "package:test test case" b
 test('$1', () ${2:async }{
 	$0
 });
 endsnippet
 
 pre_expand "ensure_import('test/test', snip)"
-snippet group "Unittest test group" b
+snippet group "package:test test group" b
 group('$1', () {
 	$0
 });
 endsnippet
 
-snippet setup "Unit test setup method" b
+snippet setup "package:test setup method" b
 setUp(() async {
 	$0
 });
 endsnippet
 
-snippet teardown "Unit test teardown method" b
+snippet teardown "package:test teardown method" b
 tearDown(() async {
 	$0
 });
