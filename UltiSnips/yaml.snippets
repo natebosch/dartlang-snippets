@@ -1,0 +1,16 @@
+snippet pubspec "Dart pubspec outline" b
+name: ${1:`!v expand('%:p:h:t')`}
+version: 0.0.1-dev
+description: $3
+author: $4
+homepage: $5
+
+environment:
+	sdk: '>=1.24.0 <2.0.0'
+
+dependencies:
+	$6
+
+dev_dependencies:
+	test: ^0.12.0
+endsnippet
