@@ -74,12 +74,10 @@ $1 _$2;
 ${1} get ${2} => _$2 ?? ${3:_init${2/.*/\u$0/}()};
 endsnippet
 
-pre_expand "ensure_import('dart:async', snip)"
 snippet aget "Async field getter" b
 Future<$1> get $2 async => ${3:_$2};
 endsnippet
 
-pre_expand "ensure_import('dart:async', snip)"
 snippet agett "Async field getter with more logic" b
 Future<$1> get $2 async {
 	$3
@@ -122,14 +120,12 @@ snippet r "Single statement return" b
 $1 $2($3) => $0;
 endsnippet
 
-pre_expand "ensure_import('dart:async', snip)"
 snippet am "Async instance or top level method" b
 Future<${1:Null}> $2($3) async {
 	$0
 }
 endsnippet
 
-pre_expand "ensure_import('dart:async', snip)"
 snippet ar "Async single statement return" b
 Future<$1> $2($3) async => $0;
 endsnippet
